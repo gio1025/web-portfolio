@@ -36,29 +36,13 @@
         rel="stylesheet">
 
     <!-- Font Awesome -->
-    <script src="https://kit.fontawesome.com/c8e4d183c2.js"
-        crossorigin="anonymous"></script>
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+        crossorigin="anonymous"
+        referrerpolicy="no-referrer">
 
-    <!-- Custom JavaScript -->
-    <script src="float-panel.js" defer></script>
-
-    <!-- Favicons -->
-    <link rel="apple-touch-icon"
-        sizes="180x180"
-        href="favicon_io/apple-touch-icon.png">
-
-    <link rel="icon"
-        type="image/png"
-        sizes="32x32"
-        href="favicon_io/favicon-32x32.png">
-
-    <link rel="icon"
-        type="image/png"
-        sizes="16x16"
-        href="favicon_io/favicon-16x16.png">
-
-    <link rel="manifest"
-        href="favicon_io/site.webmanifest">
+    <!-- Theme color -->
+    <meta name="theme-color" content="#2563EB">
 
 </head>
 
@@ -84,7 +68,7 @@
                 GIO
             </a>
 
-            <ul class="nav-links">
+            <ul class="nav-links" id="primary-navigation">
 
                 <li>
                     <a href="#home" class="active">Home</a>
@@ -103,16 +87,27 @@
                 </li>
 
                 <li>
-                    <a href="#contact">Contact</a>
+                    <a href="#contact" class="nav-cta">Contact</a>
                 </li>
 
             </ul>
+
+            <button
+                class="theme-toggle"
+                type="button"
+                aria-label="Switch to dark mode"
+                aria-pressed="false"
+                title="Switch to dark mode">
+                <i class="fas fa-moon" aria-hidden="true"></i>
+            </button>
 
             <!-- Mobile Menu Button -->
 
             <button
                 class="menu-toggle"
-                aria-label="Open Navigation">
+                aria-label="Open navigation"
+                aria-expanded="false"
+                aria-controls="primary-navigation">
 
                 <i class="fas fa-bars"></i>
 
@@ -140,25 +135,25 @@
                     Gio Barrameda
                 </h1>
 
-                <h2>
+                <h2 class="hero-role">
                     <span class="typing"></span>
                 </h2>
 
                 <p class="hero-description">
 
-                    Passionate about delivering high-quality software through
-                    manual testing, web technologies, and continuous learning.
-                    I enjoy solving problems, improving user experiences,
-                    and building reliable applications.
+                    I help teams ship reliable digital experiences by combining
+                    software quality assurance, thoughtful testing, and modern
+                    frontend problem-solving. I care about clean user journeys,
+                    strong bug detection, and products that people trust.
 
                 </p>
 
                 <div class="hero-buttons">
 
                     <a
-                        href="files/Gio_Barrameda_Resume.pdf"
+                        href="Files/GioBarrameda_Resume_2026.pdf"
                         class="btn btn-primary"
-                        download>
+                        download="GioBarrameda_Resume_2026.pdf">
 
                         <i class="fas fa-download"></i>
 
@@ -176,12 +171,29 @@
 
                 </div>
 
+                <div class="hero-metrics" aria-label="Professional highlights">
+                    <div class="metric-item">
+                        <strong>4+</strong>
+                        <span>Years QA</span>
+                    </div>
+                    <div class="metric-item">
+                        <strong>20+</strong>
+                        <span>Projects</span>
+                    </div>
+                    <div class="metric-item">
+                        <strong>100%</strong>
+                        <span>Detail-driven</span>
+                    </div>
+                </div>
+
                 <div class="hero-social">
 
                     <a
                         href="https://github.com/gio1025"
                         target="_blank"
-                        rel="noopener noreferrer">
+                        rel="noopener noreferrer"
+                        aria-label="Visit Gio on GitHub"
+                        title="GitHub">
 
                         <i class="fab fa-github"></i>
 
@@ -190,16 +202,33 @@
                     <a
                         href="https://www.linkedin.com/in/giobarrameda/"
                         target="_blank"
-                        rel="noopener noreferrer">
+                        rel="noopener noreferrer"
+                        aria-label="Connect with Gio on LinkedIn"
+                        title="LinkedIn">
 
                         <i class="fab fa-linkedin"></i>
 
                     </a>
 
                     <a
-                        href="mailto:giobarrameda123@gmail.com">
+                        href="https://www.facebook.com/yoji.ggs"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        aria-label="Visit Gio on Facebook"
+                        title="Facebook">
 
-                        <i class="fas fa-envelope"></i>
+                        <i class="fab fa-facebook-f"></i>
+
+                    </a>
+
+                    <a
+                        href="https://discord.com/users/yoji.gg"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        aria-label="Discord username: yoji.gg"
+                        title="Discord">
+
+                        <i class="fab fa-discord"></i>
 
                     </a>
 
@@ -235,10 +264,10 @@
 
             <div class="about-container">
 
-                <div class="about-image">
+                <div class="section-image-2">
 
                     <img
-                        src="Images/section-image-2.png"
+                        src="Images/section-image-3.png"
                         alt="Portrait of Gio Barrameda">
 
                 </div>
@@ -289,7 +318,7 @@
                         <div class="info-item">
 
                             <span>Email</span>
-                            <p>giobarrameda123@gmail.com</p>
+                            <p>gio.barrameda25@gmail.com</p>
 
                         </div>
 
@@ -344,15 +373,15 @@
 
                         <li>Manual Testing</li>
 
-                        <li>Regression Testing</li>
+                        <li>Automation Testing</li>
 
-                        <li>Smoke Testing</li>
+                        <li>Defect Management</li>
 
-                        <li>Functional Testing</li>
+                        <li>API Testing</li>
 
-                        <li>Test Case Creation</li>
+                        <li>Test Plan Creation</li>
 
-                        <li>Bug Reporting</li>
+                        <li>Defect Management</li>
 
                     </ul>
 
@@ -370,11 +399,11 @@
 
                         <li>Java</li>
 
-                        <li>HTML5</li>
-
-                        <li>CSS3</li>
+                        <li>Typescript</li>
 
                         <li>JavaScript</li>
+
+                        <li>HTML</li>
 
                         <li>SQL</li>
 
@@ -390,17 +419,17 @@
 
                     <ul>
 
-                        <li>Git</li>
+                        <li>Azure DevOps</li>
 
                         <li>GitHub</li>
 
                         <li>Postman</li>
 
-                        <li>VS Code</li>
+                        <li>Playwright</li>
 
                         <li>Jira</li>
 
-                        <li>Microsoft Office</li>
+                        <li>Elasticsearch</li>
 
                     </ul>
 
@@ -473,6 +502,66 @@
 
                 </div>
 
+                <div class="timeline-item">
+
+                    <div class="timeline-icon">
+                        <i class="fas fa-briefcase"></i>
+                    </div>
+
+                    <div class="timeline-content">
+
+                        <span class="timeline-date">
+                            [Month Year – Month Year]
+                        </span>
+
+                        <h3>[Job Title]</h3>
+
+                        <h4>[Company or Organization]</h4>
+
+                        <p>
+                            Add a brief summary of your role, team, and the
+                            products or services you supported.
+                        </p>
+
+                        <ul>
+                            <li>[Add a key responsibility or achievement]</li>
+                            <li>[Add a tool, testing area, or collaboration detail]</li>
+                        </ul>
+
+                    </div>
+
+                </div>
+
+                <div class="timeline-item">
+
+                    <div class="timeline-icon">
+                        <i class="fas fa-briefcase"></i>
+                    </div>
+
+                    <div class="timeline-content">
+
+                        <span class="timeline-date">
+                            [Month Year – Month Year]
+                        </span>
+
+                        <h3>[Job Title]</h3>
+
+                        <h4>[Company or Organization]</h4>
+
+                        <p>
+                            Add a brief summary of your role, team, and the
+                            products or services you supported.
+                        </p>
+
+                        <ul>
+                            <li>[Add a key responsibility or achievement]</li>
+                            <li>[Add a tool, testing area, or collaboration detail]</li>
+                        </ul>
+
+                    </div>
+
+                </div>
+
             </div>
 
         </section>
@@ -498,161 +587,91 @@
 
             <div class="projects-grid">
 
-                <!-- Project 1 -->
-
                 <article class="project-card">
 
-                    <img
-                        src="images/project1.png"
-                        alt="Street Food Hub">
+                    <div class="project-preview" aria-hidden="true">
+                        <i class="fas fa-image"></i>
+                        <span>Project preview</span>
+                    </div>
 
                     <div class="project-content">
 
-                        <h3>Street Food Hub</h3>
+                        <h3>[Project title]</h3>
 
                         <p>
-
-                            A web application that allows users to
-                            buy and sell street food while locating
-                            nearby vendors through an interactive map.
-
+                            [Describe the problem this project solves, who it
+                            helps, and what you built.]
                         </p>
 
                         <div class="project-tech">
-
-                            <span>HTML</span>
-
-                            <span>CSS</span>
-
-                            <span>PHP</span>
-
-                            <span>MySQL</span>
-
+                            <span>[Technology]</span>
+                            <span>[Technology]</span>
+                            <span>[Technology]</span>
                         </div>
 
-                        <div class="project-buttons">
-
-                            <a href="#">
-
-                                <i class="fab fa-github"></i>
-
-                                GitHub
-
-                            </a>
-
-                            <a href="#">
-
-                                Live Demo
-
-                            </a>
-
-                        </div>
+                        <p class="project-links-placeholder">
+                            [Add repository and live demo links]
+                        </p>
 
                     </div>
 
                 </article>
 
-                <!-- Project 2 -->
-
                 <article class="project-card">
 
-                    <img
-                        src="images/project2.png"
-                        alt="Bayani">
+                    <div class="project-preview" aria-hidden="true">
+                        <i class="fas fa-image"></i>
+                        <span>Project preview</span>
+                    </div>
 
                     <div class="project-content">
 
-                        <h3>Bayani</h3>
+                        <h3>[Project title]</h3>
 
                         <p>
-
-                            A 2D Action Role-Playing Game (ARPG)
-                            inspired by Filipino heroes,
-                            featuring engaging combat mechanics
-                            and pixel-art graphics.
-
+                            [Summarize the project, your contribution, and
+                            what makes the result useful or interesting.]
                         </p>
 
                         <div class="project-tech">
-
-                            <span>Unity</span>
-
-                            <span>C#</span>
-
-                            <span>Game Development</span>
-
+                            <span>[Technology]</span>
+                            <span>[Technology]</span>
+                            <span>[Technology]</span>
                         </div>
 
-                        <div class="project-buttons">
-
-                            <a href="#">
-
-                                <i class="fab fa-github"></i>
-
-                                GitHub
-
-                            </a>
-
-                            <a href="#">
-
-                                View Project
-
-                            </a>
-
-                        </div>
+                        <p class="project-links-placeholder">
+                            [Add repository and live demo links]
+                        </p>
 
                     </div>
 
                 </article>
 
-                <!-- Project 3 -->
-
                 <article class="project-card">
 
-                    <img
-                        src="images/project3.png"
-                        alt="Visitor Counter">
+                    <div class="project-preview" aria-hidden="true">
+                        <i class="fas fa-image"></i>
+                        <span>Project preview</span>
+                    </div>
 
                     <div class="project-content">
 
-                        <h3>Bidirectional Visitor Counter</h3>
+                        <h3>[Project title]</h3>
 
                         <p>
-
-                            An embedded systems project that
-                            automatically counts people entering
-                            and leaving an area using sensors
-                            and digital electronics.
-
+                            [Highlight the challenge, the approach you took,
+                            and the outcome or key learning.]
                         </p>
 
                         <div class="project-tech">
-
-                            <span>Arduino</span>
-
-                            <span>Embedded Systems</span>
-
-                            <span>C++</span>
-
+                            <span>[Technology]</span>
+                            <span>[Technology]</span>
+                            <span>[Technology]</span>
                         </div>
 
-                        <div class="project-buttons">
-
-                            <a href="#">
-
-                                <i class="fab fa-github"></i>
-
-                                GitHub
-
-                            </a>
-
-                            <a href="#">
-
-                                View Project
-
-                            </a>
-
-                        </div>
+                        <p class="project-links-placeholder">
+                            [Add repository and live demo links]
+                        </p>
 
                     </div>
 
@@ -699,8 +718,8 @@
 
                             <h4>Email</h4>
 
-                            <a href="mailto:giobarrameda123@gmail.com">
-                                giobarrameda123@gmail.com
+                            <a href="mailto:gio.barrameda25@gmail.com">
+                                gio.barrameda25@gmail.com
                             </a>
 
                         </div>
@@ -797,22 +816,24 @@
 
         <div class="footer-content">
 
+            <p class="footer-eyebrow">LET'S CONNECT</p>
+
             <h2>Gio Barrameda</h2>
 
             <p>
 
-                Software QA Engineer passionate about delivering
-                high-quality software and continuously learning
-                new technologies.
+                Software QA Engineer focused on helping teams deliver
+                reliable, user-friendly software.
 
             </p>
 
-            <div class="footer-social">
+            <div class="footer-social" aria-label="Social links">
 
                 <a
                     href="https://github.com/gio1025"
                     target="_blank"
-                    rel="noopener noreferrer">
+                    rel="noopener noreferrer"
+                    aria-label="GitHub">
 
                     <i class="fab fa-github"></i>
 
@@ -821,23 +842,26 @@
                 <a
                     href="https://www.linkedin.com/in/giobarrameda/"
                     target="_blank"
-                    rel="noopener noreferrer">
+                    rel="noopener noreferrer"
+                    aria-label="LinkedIn">
 
                     <i class="fab fa-linkedin"></i>
 
                 </a>
 
                 <a
-                    href="https://www.facebook.com/gyoh123"
+                    href="https://www.facebook.com/yoji.ggs"
                     target="_blank"
-                    rel="noopener noreferrer">
+                    rel="noopener noreferrer"
+                    aria-label="Facebook">
 
                     <i class="fab fa-facebook"></i>
 
                 </a>
 
                 <a
-                    href="mailto:giobarrameda123@gmail.com">
+                    href="mailto:giobarrameda123@gmail.com"
+                    aria-label="Email Gio">
 
                     <i class="fas fa-envelope"></i>
 
@@ -845,7 +869,14 @@
 
             </div>
 
-            <hr>
+            <nav class="footer-nav" aria-label="Footer navigation">
+                <a href="#about">About</a>
+                <a href="#skills">Skills</a>
+                <a href="#projects">Projects</a>
+                <a href="#contact">Contact</a>
+            </nav>
+
+            <div class="footer-divider" aria-hidden="true"></div>
 
             <p class="copyright">
 

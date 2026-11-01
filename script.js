@@ -1,17 +1,54 @@
 /* ==========================================================
-   Mobile Navigation
+   Appearance
 ========================================================== */
 
-const menuToggle = document.querySelector(".menu-toggle");
-const navLinks = document.querySelector(".nav-links");
+const themeToggle = document.querySelector(".theme-toggle");
+const themeColor = document.querySelector('meta[name="theme-color"]');
+let savedTheme = "light";
 
-if (menuToggle) {
+try {
+    savedTheme = localStorage.getItem("portfolio-theme") || "light";
+} catch (error) {
+    console.warn("Unable to read the saved appearance preference.", error);
+}
 
-    menuToggle.addEventListener("click", () => {
+const initialTheme = savedTheme === "dark" ? "dark" : "light";
 
-        navLinks.classList.toggle("active");
+function applyTheme(theme) {
 
-        menuToggle.classList.toggle("active");
+    document.documentElement.dataset.theme = theme;
+    document.documentElement.style.colorScheme = theme;
+
+    if (themeToggle) {
+        const isDark = theme === "dark";
+        const label = isDark ? "Switch to light mode" : "Switch to dark mode";
+
+        themeToggle.setAttribute("aria-label", label);
+        themeToggle.setAttribute("aria-pressed", String(isDark));
+        themeToggle.setAttribute("title", label);
+        themeToggle.innerHTML = `<i class="fas ${isDark ? "fa-sun" : "fa-moon"}" aria-hidden="true"></i>`;
+    }
+
+    if (themeColor) {
+        themeColor.setAttribute("content", theme === "dark" ? "#0B1220" : "#2563EB");
+    }
+
+}
+
+applyTheme(initialTheme);
+
+if (themeToggle) {
+
+    themeToggle.addEventListener("click", () => {
+
+        const nextTheme = document.documentElement.dataset.theme === "dark" ? "light" : "dark";
+        applyTheme(nextTheme);
+
+        try {
+            localStorage.setItem("portfolio-theme", nextTheme);
+        } catch (error) {
+            console.warn("Unable to save the appearance preference.", error);
+        }
 
     });
 
@@ -19,20 +56,39 @@ if (menuToggle) {
 
 
 /* ==========================================================
-   Close Mobile Menu When Link is Clicked
+   Mobile Navigation
 ========================================================== */
 
-document.querySelectorAll(".nav-links a").forEach(link => {
+const menuToggle = document.querySelector(".menu-toggle");
+const navLinks = document.querySelector(".nav-links");
 
-    link.addEventListener("click", () => {
+if (menuToggle && navLinks) {
 
-        navLinks.classList.remove("active");
+    menuToggle.addEventListener("click", () => {
 
-        menuToggle.classList.remove("active");
+        const isOpen = navLinks.classList.toggle("active");
+
+        menuToggle.classList.toggle("active", isOpen);
+        menuToggle.setAttribute("aria-expanded", String(isOpen));
+        menuToggle.setAttribute("aria-label", isOpen ? "Close navigation" : "Open navigation");
 
     });
 
-});
+    document.querySelectorAll(".nav-links a").forEach(link => {
+
+        link.addEventListener("click", () => {
+
+            navLinks.classList.remove("active");
+
+            menuToggle.classList.remove("active");
+            menuToggle.setAttribute("aria-expanded", "false");
+            menuToggle.setAttribute("aria-label", "Open navigation");
+
+        });
+
+    });
+
+}
 
 
 /* ==========================================================
@@ -43,15 +99,7 @@ const header = document.querySelector("header");
 
 window.addEventListener("scroll", () => {
 
-    if (window.scrollY > 50) {
-
-        header.style.boxShadow = "0 10px 30px rgba(0,0,0,.08)";
-
-    } else {
-
-        header.style.boxShadow = "none";
-
-    }
+    header.classList.toggle("scrolled", window.scrollY > 16);
 
 });
 
@@ -118,10 +166,12 @@ window.addEventListener("scroll", () => {
     navItems.forEach(link => {
 
         link.classList.remove("active");
+        link.removeAttribute("aria-current");
 
         if (link.getAttribute("href") === "#" + current) {
 
             link.classList.add("active");
+            link.setAttribute("aria-current", "page");
 
         }
 
@@ -221,13 +271,19 @@ if (typingElement) {
 
     const words = [
 
-        "Computer Engineer",
+        "Computer Engineer.",
 
-        "Software QA Engineer",
+        "Software QA Engineer.",
 
-        "Manual Tester",
+        "Manual Tester.",
 
-        "Automation Tester"
+        "Automation Tester.",
+
+        "API Tester.",
+
+        "Runner.",
+
+        "Gamer."
 
     ];
 
@@ -281,34 +337,72 @@ window.addEventListener("load",()=>{
 
     const loader=document.getElementById("loader");
 
-    loader.style.opacity="0";
+    if (loader) {
 
-    loader.style.transition=".5s";
+        loader.style.opacity="0";
 
-    setTimeout(()=>{
+        loader.style.transition=".5s";
 
-        loader.style.display="none";
+        setTimeout(()=>{
 
-    },500);
+            loader.style.display="none";
+
+        },500);
+
+    }
 
 });
 
 window.addEventListener("scroll",()=>{
 
-    const scroll=
+    const scroll=document.documentElement.scrollTop;
 
-    document.documentElement.scrollTop;
+    const height=document.documentElement.scrollHeight-document.documentElement.clientHeight;
 
-    const height=
+    const percent = height > 0 ? (scroll / height) * 100 : 0;
 
-    document.documentElement.scrollHeight-
+    const progressBar = document.getElementById("progressBar");
 
-    document.documentElement.clientHeight;
-
-    const percent=(scroll/height)*100;
-
-    document.getElementById("progressBar").style.width=
-
-    percent+"%";
+    if (progressBar) {
+        progressBar.style.width = percent + "%";
+    }
 
 });
+
+const contactForm = document.querySelector(".contact-form form");
+
+if (contactForm) {
+
+    contactForm.addEventListener("submit", (event) => {
+
+        event.preventDefault();
+
+        const submitButton = contactForm.querySelector("button[type='submit']");
+
+        if (submitButton) {
+            submitButton.disabled = true;
+            submitButton.innerHTML = '<i class="fas fa-check"></i> Message Sent';
+        }
+
+        const formData = new FormData(contactForm);
+        const name = (formData.get("name") || "").toString().trim();
+        const email = (formData.get("email") || "").toString().trim();
+        const subject = (formData.get("subject") || "").toString().trim();
+        const message = (formData.get("message") || "").toString().trim();
+
+        const mailtoLink = `mailto:giobarrameda123@gmail.com?subject=${encodeURIComponent(subject || "Portfolio Inquiry")}&body=${encodeURIComponent(`Name: ${name}\nEmail: ${email}\n\nMessage:\n${message}`)}`;
+
+        window.location.href = mailtoLink;
+
+        contactForm.reset();
+
+        setTimeout(() => {
+            if (submitButton) {
+                submitButton.disabled = false;
+                submitButton.innerHTML = '<i class="fas fa-paper-plane"></i> Send Message';
+            }
+        }, 2500);
+
+    });
+
+}
