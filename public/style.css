@@ -2085,9 +2085,14 @@ header.scrolled {
         linear-gradient(135deg, #eff6ff, #f8fafc);
 }
 
-.project-preview i {
-    color: #2563eb;
-    font-size: 2rem;
+.project-preview img {
+    width: 100px;
+    height: 100px;
+    object-fit: contain;
+}
+
+.project-preview .kuripot-mark-dark {
+    display: none;
 }
 
 .project-preview span {
@@ -2203,6 +2208,14 @@ html[data-theme="dark"] .project-preview {
     background:
         radial-gradient(circle at 50% 40%, rgba(37, 99, 235, 0.2), transparent 38%),
         linear-gradient(135deg, #17243a, #111c2c);
+}
+
+html[data-theme="dark"] .project-preview .kuripot-mark-light {
+    display: none;
+}
+
+html[data-theme="dark"] .project-preview .kuripot-mark-dark {
+    display: block;
 }
 
 html[data-theme="dark"] .project-tech span {
