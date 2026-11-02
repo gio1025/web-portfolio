@@ -186,31 +186,13 @@ header{
 
 }
 
-.logo{
-
-    font-family:"Space Grotesk",sans-serif;
-
-    font-size:30px;
-
-    font-weight:700;
-
-    color:var(--secondary);
-
-    letter-spacing:2px;
-
-}
-
-.logo:hover{
-
-    color:var(--primary);
-
-}
-
 .nav-links{
 
     display:flex;
 
     gap:35px;
+
+    margin:0 auto;
 
 }
 
@@ -580,6 +562,74 @@ hero h2{
 
     font-weight:500;
 
+}
+
+.about-hobbies {
+    max-width: 1200px;
+    margin: 90px auto 0;
+}
+
+.hobbies-title {
+    margin-bottom: 32px;
+}
+
+.hobbies-title h2 {
+    font-size: clamp(2rem, 2.5vw, 2.7rem);
+}
+
+.hobbies-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+    gap: 20px;
+}
+
+.hobby-card {
+    padding: 26px;
+    border: 1px solid rgba(148, 163, 184, 0.18);
+    border-radius: 18px;
+    background: var(--white);
+    box-shadow: var(--shadow);
+    transition: transform var(--transition), box-shadow var(--transition);
+}
+
+.hobby-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 16px 30px rgba(15, 23, 42, 0.1);
+}
+
+.hobby-card i {
+    margin-bottom: 16px;
+    color: var(--primary);
+    font-size: 1.6rem;
+}
+
+.hobby-card h3 {
+    margin-bottom: 8px;
+    font-size: 1.2rem;
+}
+
+.hobby-card p {
+    margin: 0;
+    font-size: 0.95rem;
+}
+
+.hobby-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    margin-top: 16px;
+    color: var(--primary);
+    font-weight: 600;
+}
+
+.hobby-link:hover {
+    color: var(--primary-dark);
+}
+
+.hobby-link:focus-visible {
+    border-radius: 4px;
+    outline: 3px solid rgba(37, 99, 235, 0.4);
+    outline-offset: 3px;
 }
 
 
@@ -1253,6 +1303,7 @@ footer hr{
 ========================================================== */
 
 .project-card,
+.hobby-card,
 .skill-card,
 .info-item,
 .timeline-content,
@@ -1263,6 +1314,7 @@ footer hr{
 }
 
 .project-card:hover,
+.hobby-card:hover,
 .skill-card:hover,
 .info-item:hover{
 
@@ -1638,9 +1690,10 @@ header {
 }
 
 .metric-item span {
+    display: block;
     color: var(--text-light);
     font-size: 0.82rem;
-    white-space: nowrap;
+    line-height: 1.35;
 }
 
 .hero-social {
@@ -1986,8 +2039,7 @@ header.scrolled {
 }
 
 .menu-toggle:focus-visible,
-.nav-links a:focus-visible,
-.logo:focus-visible {
+.nav-links a:focus-visible {
     outline: 3px solid rgba(37, 99, 235, 0.55);
     outline-offset: 3px;
 }
@@ -1996,6 +2048,7 @@ header.scrolled {
     .nav-links {
         top: calc(100% + 1px);
         gap: 8px;
+        margin: 0;
         padding: 18px 20px 22px;
         border: 1px solid rgba(148, 163, 184, 0.18);
         border-top: 0;
@@ -2136,6 +2189,7 @@ html[data-theme="dark"] .nav-links a.active:not(.nav-cta) {
 
 html[data-theme="dark"] .metric-item,
 html[data-theme="dark"] .info-item,
+html[data-theme="dark"] .hobby-card,
 html[data-theme="dark"] .skill-card,
 html[data-theme="dark"] .timeline-content,
 html[data-theme="dark"] .project-card,

@@ -186,7 +186,7 @@ window.addEventListener("scroll", () => {
 
 const revealElements = document.querySelectorAll(
 
-    ".about-container, .skill-card, .timeline-item, .project-card, .contact-container"
+    ".about-container, .hobby-card, .skill-card, .timeline-item, .project-card, .contact-container"
 
 );
 
@@ -273,7 +273,7 @@ if (typingElement) {
 
         "Computer Engineer.",
 
-        "Software QA Engineer.",
+        "QA Engineer.",
 
         "Manual Tester.",
 
@@ -281,9 +281,7 @@ if (typingElement) {
 
         "API Tester.",
 
-        "Runner.",
-
-        "Gamer."
+        "Regression Tester."
 
     ];
 
@@ -390,7 +388,7 @@ if (contactForm) {
         const subject = (formData.get("subject") || "").toString().trim();
         const message = (formData.get("message") || "").toString().trim();
 
-        const mailtoLink = `mailto:giobarrameda123@gmail.com?subject=${encodeURIComponent(subject || "Portfolio Inquiry")}&body=${encodeURIComponent(`Name: ${name}\nEmail: ${email}\n\nMessage:\n${message}`)}`;
+        const mailtoLink = `mailto:gio.barrameda25@gmail.com?subject=${encodeURIComponent(subject || "Portfolio Inquiry")}&body=${encodeURIComponent(`Name: ${name}\nEmail: ${email}\n\nMessage:\n${message}`)}`;
 
         window.location.href = mailtoLink;
 
