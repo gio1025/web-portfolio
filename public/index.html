@@ -23,10 +23,12 @@
     <meta name="author" content="Gio Barrameda">
 
     <!-- Favicons -->
-    <link rel="icon" href="Favicon/favicon.ico" sizes="any">
-    <link rel="icon" type="image/png" sizes="32x32" href="Favicon/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="Favicon/favicon-16x16.png">
-    <link rel="apple-touch-icon" href="Favicon/apple-touch-icon.png">
+    <link rel="icon" href="Favicon/favicon.ico?v=20261107" sizes="any">
+    <link rel="icon" type="image/png" sizes="192x192" href="Favicon/android-chrome-192x192.png?v=20261107">
+    <link rel="icon" type="image/png" sizes="512x512" href="Favicon/favicon-512.png?v=20261107">
+    <link rel="icon" type="image/png" sizes="32x32" href="Favicon/favicon-32x32.png?v=20261107">
+    <link rel="icon" type="image/png" sizes="16x16" href="Favicon/favicon-16x16.png?v=20261107">
+    <link rel="apple-touch-icon" sizes="180x180" href="Favicon/apple-touch-icon.png?v=20261107">
 
     <!-- CSS -->
     <link rel="stylesheet" href="style.css">
@@ -247,6 +249,29 @@
                 <img
                     src="Images/about-image2.png"
                     alt="Portrait of Gio Barrameda">
+
+                <div class="hero-qa-card hero-qa-status" aria-hidden="true">
+                    <span class="hero-qa-status-icon">
+                        <i class="fas fa-shield-alt"></i>
+                    </span>
+                    <span class="hero-qa-status-copy">
+                        <strong>Quality first</strong>
+                        <span>Reliable by design</span>
+                    </span>
+                    <i class="fas fa-circle-check hero-qa-check"></i>
+                </div>
+
+                <div class="hero-qa-card hero-qa-toolkit" aria-hidden="true">
+                    <div class="hero-qa-toolkit-heading">
+                        <i class="fas fa-flask"></i>
+                        <span>QA TOOLKIT</span>
+                    </div>
+                    <div class="hero-qa-toolkit-list">
+                        <span><i class="fas fa-check"></i> UI testing</span>
+                        <span><i class="fas fa-check"></i> API testing</span>
+                        <span><i class="fas fa-check"></i> Automation</span>
+                    </div>
+                </div>
 
             </div>
 
@@ -644,6 +669,14 @@
 
                         <div class="project-buttons">
                             <a
+                                href="https://kuripot-finance.web.app/"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                aria-label="Open the KuriPot Finance App">
+                                <i class="fas fa-arrow-up-right-from-square" aria-hidden="true"></i>
+                                Open Live App
+                            </a>
+                            <a
                                 href="https://github.com/gio1025/finance-app"
                                 target="_blank"
                                 rel="noopener noreferrer"
@@ -942,6 +975,7 @@
 
     <!-- ================= JAVASCRIPT ================= -->
 
+    <script src="https://cdn.jsdelivr.net/npm/animejs@3.2.2/lib/anime.min.js"></script>
     <script src="script.js"></script>
 
 </body>

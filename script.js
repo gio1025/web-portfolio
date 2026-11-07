@@ -331,6 +331,39 @@ if (typingElement) {
 
 }
 
+/* ==========================================================
+   Hero Visual Entrance
+========================================================== */
+
+const heroPortrait = document.querySelector(".hero-image img");
+const heroQACards = document.querySelectorAll(".hero-qa-card");
+const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+if (window.anime && !prefersReducedMotion) {
+
+    if (heroPortrait) {
+        window.anime({
+            targets: heroPortrait,
+            opacity: [0, 1],
+            scale: [0.96, 1],
+            duration: 850,
+            easing: "easeOutCubic"
+        });
+    }
+
+    if (heroQACards.length) {
+        window.anime({
+            targets: heroQACards,
+            opacity: [0, 1],
+            translateY: [14, 0],
+            delay: window.anime.stagger(140, { start: 220 }),
+            duration: 650,
+            easing: "easeOutCubic"
+        });
+    }
+
+}
+
 window.addEventListener("load",()=>{
 
     const loader=document.getElementById("loader");
